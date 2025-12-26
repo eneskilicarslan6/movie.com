@@ -17,7 +17,8 @@ const FilterPanel = ({ isOpen, closePanel, filters, setFilters, genres }) => {
           exit={{ height: 0, opacity: 0 }}
           className="overflow-hidden border-b border-white/5 bg-[#080808]"
         >
-          <div className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto relative">
+          {/* MOBİL İÇİN GRID AYARI: grid-cols-1 md:grid-cols-4 */}
+          <div className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto relative">
             
             <button onClick={closePanel} className="absolute top-2 right-2 p-2 text-gray-500 hover:text-white md:hidden">
               <X size={20} />
@@ -27,7 +28,6 @@ const FilterPanel = ({ isOpen, closePanel, filters, setFilters, genres }) => {
               <label className="flex items-center gap-2 text-[10px] font-bold text-cyan-400 uppercase tracking-widest">
                 <Layers size={12} /> Tür
               </label>
-              
               <div className="relative">
                 <select 
                   value={filters.genre} 
@@ -94,13 +94,13 @@ const FilterPanel = ({ isOpen, closePanel, filters, setFilters, genres }) => {
               <div className="grid grid-cols-2 gap-2">
                 <button 
                   onClick={() => handleChange('sortBy', 'popularity.desc')}
-                  className={`py-2.5 rounded-xl text-[10px] font-bold uppercase border transition-all ${filters.sortBy === 'popularity.desc' ? 'bg-cyan-400 text-black border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)]' : 'bg-transparent text-gray-500 border-white/10 hover:border-white/30 hover:bg-white/5'}`}
+                  className={`py-2.5 rounded-xl text-[10px] font-bold uppercase border transition-all ${filters.sortBy === 'popularity.desc' ? 'bg-cyan-400 text-black border-cyan-400' : 'bg-transparent text-gray-500 border-white/10 hover:border-white/30'}`}
                 >
                   Popüler
                 </button>
                 <button 
                   onClick={() => handleChange('sortBy', 'vote_average.desc')}
-                  className={`py-2.5 rounded-xl text-[10px] font-bold uppercase border transition-all ${filters.sortBy === 'vote_average.desc' ? 'bg-cyan-400 text-black border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)]' : 'bg-transparent text-gray-500 border-white/10 hover:border-white/30 hover:bg-white/5'}`}
+                  className={`py-2.5 rounded-xl text-[10px] font-bold uppercase border transition-all ${filters.sortBy === 'vote_average.desc' ? 'bg-cyan-400 text-black border-cyan-400' : 'bg-transparent text-gray-500 border-white/10 hover:border-white/30'}`}
                 >
                   En İyi
                 </button>
